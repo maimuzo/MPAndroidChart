@@ -18,6 +18,26 @@ import java.util.List;
  * @author Philipp Jahoda
  */
 public abstract class AxisBase extends ComponentBase {
+    // for manual setting of label position
+    private boolean mEnableSpecifyLabel;
+    private ArrayList<Float> mSpecifyLabelPoints;
+
+    public boolean isEnabledSpecifyLabel() {
+        return mEnableSpecifyLabel;
+    }
+
+    public void setEnableSpecifyLabel(boolean mEnableSpecifyLabel) {
+        this.mEnableSpecifyLabel = mEnableSpecifyLabel;
+    }
+
+    public ArrayList<Float> getSpecifyLabelPoints() {
+        return mSpecifyLabelPoints;
+    }
+
+    public void setSpecifyLabelPoints(ArrayList<Float> mSpecifyLabelPoints) {
+        this.mSpecifyLabelPoints = mSpecifyLabelPoints;
+    }
+
 
     /**
      * custom formatter that is used instead of the auto-formatter if set

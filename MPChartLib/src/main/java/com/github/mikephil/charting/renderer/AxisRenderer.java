@@ -12,6 +12,8 @@ import com.github.mikephil.charting.utils.Transformer;
 import com.github.mikephil.charting.utils.Utils;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
+import java.util.ArrayList;
+
 /**
  * Baseclass of all axis renderers.
  *
@@ -158,6 +160,19 @@ public abstract class AxisRenderer extends Renderer {
             mAxis.mEntries = new float[]{};
             mAxis.mCenteredEntries = new float[]{};
             mAxis.mEntryCount = 0;
+            return;
+        }
+
+        // for manual setting of label position
+        if(mAxis.isEnabledSpecifyLabel()){
+            ArrayList<Float> points = mAxis.getSpecifyLabelPoints();
+            mAxis.mEntries = new float[points.size()];
+            for(int i=0; i<points.size(); i++){
+                mAxis.mEntries[i] = points.get(i);
+            }
+            mAxis.mCenteredEntries = new float[]{};
+            mAxis.mEntryCount = mAxis.mEntries.length;
+            mAxis.mDecimals = 0;
             return;
         }
 

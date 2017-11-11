@@ -170,4 +170,20 @@ public class Entry extends BaseEntry implements Parcelable {
             return new Entry[size];
         }
     };
+
+    /**
+     * monkey patch!
+     * if getData() is false, skip drawValue()
+     */
+    public boolean isNeedToDrawValue(){
+        // if entry.getData() is true, need to write value
+        boolean needToDrawThisValue = false;
+        if (null == getData() // default is true
+                || !(getData() instanceof Boolean) // default is true
+                || ((getData() instanceof Boolean) && (Boolean)(getData()))) // is this true?
+        {
+            needToDrawThisValue = true;
+        }
+        return needToDrawThisValue;
+    }
 }

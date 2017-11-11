@@ -332,6 +332,21 @@ public class YAxisRenderer extends AxisRenderer {
                             mViewPortHandler.contentLeft() + xOffset,
                             pts[1] - yOffset + labelLineHeight, mLimitLinePaint);
 
+                } else if (position == LimitLine.LimitLabelPosition.CENTER_TOP) {
+
+                    mLimitLinePaint.setTextAlign(Align.CENTER);
+                    c.drawText(label,
+                            (mViewPortHandler.contentLeft() + mViewPortHandler.contentRight()) / 2f + xOffset,
+                            pts[1] - yOffset + labelLineHeight, mLimitLinePaint);
+
+
+                } else if (position == LimitLine.LimitLabelPosition.CENTER_BOTTOM) {
+
+                    mLimitLinePaint.setTextAlign(Align.CENTER);
+                    c.drawText(label,
+                            (mViewPortHandler.contentLeft() + mViewPortHandler.contentRight()) / 2f + xOffset,
+                            pts[1] + yOffset + labelLineHeight, mLimitLinePaint);
+
                 } else {
 
                     mLimitLinePaint.setTextAlign(Align.LEFT);

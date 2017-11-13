@@ -345,7 +345,7 @@ public class YAxisRenderer extends AxisRenderer {
                     mLimitLinePaint.setTextAlign(Align.CENTER);
                     c.drawText(label,
                             (mViewPortHandler.contentLeft() + mViewPortHandler.contentRight()) / 2f + xOffset,
-                            pts[1] + yOffset + labelLineHeight, mLimitLinePaint);
+                            pts[1] + yOffset, mLimitLinePaint);
 
                 } else {
 
